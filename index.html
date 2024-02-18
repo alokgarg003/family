@@ -19,10 +19,30 @@
             <li>Dual Functionality</li>
             <li>Privacy and Security</li>
         </ul>
-        <div class="buttons">
-            <a href="login.html" class="btn">Login</a>
-            <a href="registration.html" class="btn">Register</a>
-        </div>
+        
+        <!-- Form for choosing username -->
+        <form id="usernameForm">
+            <label for="username">Choose your username:</label>
+            <input type="text" id="username" name="username" required>
+            <input type="submit" value="Save Username" class="btn">
+        </form>
     </div>
+
+    <script>
+        // Function to handle form submission
+        document.getElementById("usernameForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the chosen username from the form
+            var username = document.getElementById("username").value;
+
+            // Save the username to local storage or database (you can implement this part)
+            // For now, let's just store it in the browser's local storage
+            localStorage.setItem("username", username);
+
+            // Redirect to the home page after saving the username
+            window.location.href = "home.html";
+        });
+    </script>
 </body>
 </html>
