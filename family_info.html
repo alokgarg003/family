@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Family Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Family Information</h1>
+        <form id="familyInfoForm">
+            <label for="familyName">Family Name:</label>
+            <input type="text" id="familyName" name="familyName" required><br><br>
+            <label for="relation">Your Relation:</label>
+            <input type="text" id="relation" name="relation" required><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <input type="submit" value="Add" class="btn">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("familyInfoForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the family information from the form
+            var familyName = document.getElementById("familyName").value;
+            var relation = document.getElementById("relation").value;
+            var age = document.getElementById("age").value;
+
+            // Example: You can save the family information to local storage or database
+            // For demonstration, let's log the family information to the console
+            console.log("Family Name: " + familyName);
+            console.log("Relation: " + relation);
+            console.log("Age: " + age);
+
+            // Optionally, you can redirect the user to another page after adding family information
+            // For example, redirect to the home page
+            window.location.href = "home.html";
+        });
+    </script>
+</body>
+</html>
